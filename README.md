@@ -4,7 +4,7 @@ A practical multi-endpoint cybersecurity lab for security monitoring, threat det
 
 ## Overview
 
-This project combines **Splunk ** and **Velociraptor** to build a centralized security monitoring and endpoint investigation environment.
+This project combines **Splunk** and **Velociraptor** to build a centralized security monitoring and endpoint investigation environment.
 
 Using Kali Linux, controlled attack scenarios are executed against Windows 11 ARM64 and Ubuntu Linux ARM64 endpoints. The resulting activity is monitored in Splunk, investigated using Velociraptor, and analyzed through a complete security operations workflow.
 
@@ -41,7 +41,7 @@ Kali Linux is used exclusively for controlled attack simulation. It is not confi
 
 The platform uses two complementary security technologies.
 
-**Splunk  — Security Monitoring and Detection**
+**Splunk — Security Monitoring and Detection**
 
 Splunk receives endpoint telemetry through Universal Forwarders, indexes the events and makes them available for investigation.
 
