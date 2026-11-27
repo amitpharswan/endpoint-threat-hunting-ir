@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document describes the technologies used in the Enterprise Endpoint Threat Hunting & Incident Response Platform.
+This document describes the technologies used in the   Endpoint Threat Hunting & Incident Response Platform.
 
 For each technology, it records:
 
@@ -21,7 +21,7 @@ For each technology, it records:
 
 | Technology | Deployment location | Primary responsibility |
 |---|---|---|
-| Splunk Enterprise | MacBook Air M1 | Central SIEM and log analysis |
+| Splunk   | MacBook Air M1 | Central SIEM and log analysis |
 | Splunk Universal Forwarder | Windows and Ubuntu | Endpoint log collection and forwarding |
 | Sysmon | Windows 11 ARM64 | Detailed Windows telemetry |
 | Windows Security Auditing | Windows 11 ARM64 | Security and authentication events |
@@ -34,11 +34,11 @@ For each technology, it records:
 
 ---
 
-## 3. Splunk Enterprise
+## 3. Splunk  
 
 ### What it is
 
-Splunk Enterprise is the central Security Information and Event Management (SIEM) platform in this lab.
+Splunk   is the central Security Information and Event Management (SIEM) platform in this lab.
 
 ### Why the project needs it
 
@@ -96,7 +96,7 @@ Splunk Universal Forwarder is the endpoint log collection and forwarding compone
 
 ### Why the project needs it
 
-It transfers configured endpoint telemetry to the central Splunk Enterprise instance.
+It transfers configured endpoint telemetry to the central Splunk   instance.
 
 ### Installation location
 
@@ -124,13 +124,13 @@ Ubuntu sources:
 
 ### Data handled
 
-The forwarder collects and forwards configured event and log data to Splunk Enterprise.
+The forwarder collects and forwards configured event and log data to Splunk  .
 
 ### Communication
 
 Windows and Ubuntu Universal Forwarders communicate with the Mac Splunk receiver.
 
-Planned destination: Mac Splunk Enterprise, TCP 9997, subject to configuration verification.
+Planned destination: Mac Splunk  , TCP 9997, subject to configuration verification.
 
 ### Verification
 
@@ -203,7 +203,7 @@ Process information may include:
 
 Sysmon writes events to its Windows event log channel.
 
-Splunk Universal Forwarder collects the configured Sysmon event source and forwards it to Splunk Enterprise.
+Splunk Universal Forwarder collects the configured Sysmon event source and forwards it to Splunk  .
 
 ### Verification
 
@@ -264,7 +264,7 @@ Example event IDs:
 
 Windows records security events in its Security event log.
 
-Splunk Universal Forwarder collects the configured Security log and forwards it to Splunk Enterprise.
+Splunk Universal Forwarder collects the configured Security log and forwards it to Splunk  .
 
 ### Verification
 
@@ -313,7 +313,7 @@ These events supplement process creation telemetry from Sysmon and Windows Secur
 
 PowerShell writes configured logging events to Windows event logs.
 
-Splunk Universal Forwarder collects the configured event sources and forwards them to Splunk Enterprise.
+Splunk Universal Forwarder collects the configured event sources and forwards them to Splunk  .
 
 ### Verification
 
@@ -367,7 +367,7 @@ For example, a properly configured rule can record relevant activity when a user
 
 auditd writes audit records to the configured audit log.
 
-Splunk Universal Forwarder collects the configured audit log source and forwards the records to Splunk Enterprise.
+Splunk Universal Forwarder collects the configured audit log source and forwards the records to Splunk  .
 
 ### Verification
 
@@ -617,8 +617,8 @@ Kali is an adversary simulation node, not a monitored target endpoint.
 | Windows Security Auditing | Security events | Windows Security log and Universal Forwarder |
 | PowerShell Logging | PowerShell events | Windows event log and Universal Forwarder |
 | Linux auditd | Linux audit records | Audit log and Universal Forwarder |
-| Splunk Universal Forwarder | Configured endpoint logs | Splunk Enterprise |
-| Splunk Enterprise | Searches, detections, alerts, dashboards | Analyst |
+| Splunk Universal Forwarder | Configured endpoint logs | Splunk   |
+| Splunk   | Searches, detections, alerts, dashboards | Analyst |
 | Velociraptor Client | Endpoint collection results | Velociraptor Server |
 | Velociraptor Server | Managed collections and hunt results | Analyst |
 | VQL and Artifacts | Endpoint investigation output | Velociraptor investigation |
@@ -628,7 +628,7 @@ Kali is an adversary simulation node, not a monitored target endpoint.
 
 Before attack scenarios begin, the project must verify:
 
-- [ ] Splunk Enterprise is operational.
+- [ ] Splunk   is operational.
 - [ ] Windows Universal Forwarder communicates with Splunk.
 - [ ] Ubuntu Universal Forwarder communicates with Splunk.
 - [ ] Windows Sysmon generates expected configured events.
