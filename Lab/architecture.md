@@ -1,12 +1,12 @@
-# Enterprise Endpoint Threat Hunting & Incident Response Platform
+# Endpoint Threat Hunting & Incident Response Platform
 
 ## 1. Project Overview
 
-The Enterprise Endpoint Threat Hunting & Incident Response Platform is a hands-on cybersecurity lab designed to demonstrate a multi-endpoint security monitoring, threat hunting, investigation, and incident response workflow.
+The Endpoint Threat Hunting & Incident Response Platform is a hands-on cybersecurity lab designed to demonstrate a multi-endpoint security monitoring, threat hunting, investigation, and incident response workflow.
 
 The lab combines:
 
-- **Splunk Enterprise** for centralized security monitoring, log analysis, detection searches, alerts, and dashboards.
+- **Splunk  ** for centralized security monitoring, log analysis, detection searches, alerts, and dashboards.
 - **Velociraptor** for endpoint visibility, live investigation, artifact collection, and hunting.
 - **Sysmon and Windows Security Auditing** for Windows endpoint telemetry.
 - **Linux auditd** for Linux security auditing.
@@ -49,7 +49,7 @@ The platform consists of four machines.
 
 Planned components:
 
-- Splunk Enterprise
+- Splunk  
 - Velociraptor Server
 - Web browser
 - Project evidence directory
@@ -74,7 +74,7 @@ Planned components:
 **Splunk Universal Forwarder**
 
 - Collect configured Windows event logs.
-- Forward Security, System, PowerShell, and Sysmon events to Splunk Enterprise.
+- Forward Security, System, PowerShell, and Sysmon events to Splunk  .
 
 **Sysmon**
 
@@ -123,7 +123,7 @@ Planned components:
 **Splunk Universal Forwarder**
 
 - Collect configured Linux authentication logs.
-- Forward syslog and audit logs to Splunk Enterprise.
+- Forward syslog and audit logs to Splunk  .
 
 Initial log sources to evaluate:
 
@@ -176,9 +176,9 @@ Responsibilities:
 
 ## 4. Central Security Platform
 
-### 4.1 Splunk Enterprise — SIEM
+### 4.1 Splunk   — SIEM
 
-Splunk Enterprise is the central SIEM platform.
+Splunk   is the central SIEM platform.
 
 Its responsibilities are to:
 
@@ -197,7 +197,7 @@ Splunk does not automatically determine whether an event is malicious. Detection
 
 The Universal Forwarder is the endpoint log collection and forwarding component.
 
-It collects configured data sources from Windows and Ubuntu and sends the data to Splunk Enterprise.
+It collects configured data sources from Windows and Ubuntu and sends the data to Splunk  .
 
 It does not independently perform the complete SIEM investigation process.
 
@@ -270,8 +270,8 @@ The final network documentation will identify:
 
 | Source                    | Destination             | Purpose                      |
 | ------------------------- | ----------------------- | ---------------------------- |
-| Windows                   | Mac / Splunk Enterprise | Forward endpoint logs        |
-| Ubuntu                    | Mac / Splunk Enterprise | Forward endpoint logs        |
+| Windows                   | Mac / Splunk   | Forward endpoint logs        |
+| Ubuntu                    | Mac / Splunk   | Forward endpoint logs        |
 | Mac / Velociraptor Server | Windows                 | Endpoint investigation       |
 | Mac / Velociraptor Server | Ubuntu                  | Endpoint investigation       |
 | Kali                      | Windows                 | Controlled attack simulation |
@@ -342,7 +342,7 @@ The lab must follow these constraints:
 
 This project is a practical two-endpoint security monitoring and incident response lab.
 
-It demonstrates selected enterprise security operations workflows, including telemetry collection, detection engineering, endpoint investigation, forensic evidence preservation, and incident response.
+It demonstrates selected   security operations workflows, including telemetry collection, detection engineering, endpoint investigation, forensic evidence preservation, and incident response.
 
 It is not intended to be a production EDR deployment or a replacement for commercial EDR platforms.
 
@@ -353,7 +353,7 @@ The availability of telemetry and investigation results depends on actual endpoi
 The architecture documentation will be considered complete when:
 
 - [x] All four machine roles are documented.
-- [x] Splunk Enterprise and Universal Forwarder responsibilities are clear.
+- [x] Splunk   and Universal Forwarder responsibilities are clear.
 - [x] Windows telemetry components are documented.
 - [x] Ubuntu audit and monitoring components are documented.
 - [x] Velociraptor Server and Client responsibilities are clear.
