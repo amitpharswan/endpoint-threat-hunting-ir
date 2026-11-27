@@ -1,6 +1,6 @@
 # Data Flow
 
-**Project:** Enterprise Endpoint Threat Hunting & Incident Response Platform  
+**Project:**   Endpoint Threat Hunting & Incident Response Platform  
 **Document:** `architecture/data-flow.md`  
 **Status:** Architecture draft — pending review and environment validation
 
@@ -10,7 +10,7 @@ This document describes how endpoint activity becomes security telemetry, how th
 
 The project uses two complementary platforms:
 
-- **Splunk Enterprise:** Centralized log collection, indexing, searching, correlation, detection, alerting, and dashboards.
+- **Splunk  :** Centralized log collection, indexing, searching, correlation, detection, alerting, and dashboards.
 - **Velociraptor:** Endpoint visibility, live investigation, artifact collection, hunting, and forensic evidence gathering.
 
 The intended workflow covers both Windows 11 ARM64 and Ubuntu Linux ARM64 endpoints.
@@ -38,7 +38,7 @@ The intended workflow covers both Windows 11 ARM64 and Ubuntu Linux ARM64 endpoi
                          |
                          v
                  MAC — SPLUNK
-                 ENTERPRISE
+                  
                          |
                  Receive and Index
                          |
@@ -116,14 +116,14 @@ The Splunk Universal Forwarder runs on Windows.
 
 Its role is to:
 1. Collect configured Windows event sources.
-2. Forward collected events to Splunk Enterprise.
+2. Forward collected events to Splunk  .
 3. Make the configured endpoint telemetry available for centralized analysis.
 
 The forwarder is a collection and forwarding component. It does not independently perform the complete SIEM investigation process.
 
 ### 3.4 Splunk processing and detection
 
-Splunk Enterprise on the Mac:
+Splunk   on the Mac:
 1. Receives forwarded events.
 2. Indexes the collected data.
 3. Makes the events searchable.
@@ -136,7 +136,7 @@ Splunk does not automatically determine whether an event is malicious. Detection
 
 **Windows flow summary:**
 
-Windows process or user activity → Sysmon / Windows Security Auditing / PowerShell Logging → Splunk Universal Forwarder → Splunk Enterprise → Index → SPL search → Detection or alert.
+Windows process or user activity → Sysmon / Windows Security Auditing / PowerShell Logging → Splunk Universal Forwarder → Splunk   → Index → SPL search → Detection or alert.
 
 ## 4. Ubuntu Linux Telemetry Flow
 
@@ -172,12 +172,12 @@ The Splunk Universal Forwarder runs on Ubuntu.
 
 Its role is to:
 1. Collect configured Linux log sources.
-2. Forward the collected data to Splunk Enterprise.
+2. Forward the collected data to Splunk  .
 3. Make the endpoint telemetry available for centralized searching.
 
 ### 4.4 Splunk processing and detection
 
-Splunk Enterprise:
+Splunk  :
 1. Receives Linux events.
 2. Indexes the collected data.
 3. Makes events searchable.
@@ -190,7 +190,7 @@ Detection searches must be validated using observed endpoint activity.
 
 **Ubuntu flow summary:**
 
-Linux activity → auditd / configured authentication and system logs → Splunk Universal Forwarder → Splunk Enterprise → Index → SPL search → Detection or alert.
+Linux activity → auditd / configured authentication and system logs → Splunk Universal Forwarder → Splunk   → Index → SPL search → Detection or alert.
 
 ## 5. Velociraptor Investigation Flow
 
@@ -252,7 +252,7 @@ Example: suspicious PowerShell execution on Windows.
 | 1 | PowerShell executes on Windows | Windows endpoint |
 | 2 | Process creation event is recorded | Sysmon |
 | 3 | Event is forwarded | Splunk Universal Forwarder |
-| 4 | Event is indexed and searchable | Splunk Enterprise |
+| 4 | Event is indexed and searchable | Splunk   |
 | 5 | Detection search identifies suspicious command-line activity | SPL |
 | 6 | Analyst reviews the alert | Analyst / Splunk |
 | 7 | Additional endpoint information is collected | Velociraptor |
@@ -380,9 +380,9 @@ The planned data flow must be validated during Phase 2.
 | Validation area | Expected result |
 |---|---|
 | Windows telemetry generation | Configured Windows sources produce expected events |
-| Windows forwarding | Configured events reach Splunk Enterprise |
+| Windows forwarding | Configured events reach Splunk   |
 | Ubuntu telemetry generation | Configured Linux sources produce expected events |
-| Ubuntu forwarding | Configured events reach Splunk Enterprise |
+| Ubuntu forwarding | Configured events reach Splunk   |
 | Splunk indexing | Expected endpoint events are searchable |
 | SPL detection | Searches identify the intended controlled activity |
 | Velociraptor Windows client | Client communicates with the server |
