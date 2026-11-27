@@ -1,6 +1,6 @@
 # Network Topology
 
-**Project:** Enterprise Endpoint Threat Hunting & Incident Response Platform  
+**Project:**   Endpoint Threat Hunting & Incident Response Platform  
 **Document:** `architecture/network-topology.md`  
 **Status:** Architecture draft — pending environment and network verification
 
@@ -36,7 +36,7 @@ The following is a logical representation. It does not establish actual IP addre
    | macOS        |    | ARM64 VM     |    | ARM64 VM     |
    |              |    |              |    |              |
    | Splunk       |    | Splunk UF    |    | Splunk UF    |
-   | Enterprise   |    | Sysmon       |    | auditd       |
+   |     |    | Sysmon       |    | auditd       |
    |              |    | VR Client    |    | VR Client    |
    | VR Server    |    |              |    |              |
    +--------------+    +--------------+    +--------------+
@@ -54,7 +54,7 @@ The following is a logical representation. It does not establish actual IP addre
 ```
 
 **Diagram interpretation:**
-- Windows and Ubuntu forward configured telemetry to Splunk Enterprise on the Mac.
+- Windows and Ubuntu forward configured telemetry to Splunk   on the Mac.
 - The Mac's Velociraptor Server communicates with the Velociraptor Clients on both endpoints.
 - Kali initiates controlled attack simulations against Windows and Ubuntu.
 - All communication is intended to remain within the configured lab network.
@@ -91,7 +91,7 @@ The following ports are proposed allocations from the project blueprint. They ar
 
 **Flow:**
 
-Windows endpoint → Splunk Universal Forwarder → Mac Splunk Enterprise
+Windows endpoint → Splunk Universal Forwarder → Mac Splunk  
 
 Purpose:
 - Forward configured Windows telemetry.
@@ -102,7 +102,7 @@ Purpose:
 
 **Flow:**
 
-Ubuntu endpoint → Splunk Universal Forwarder → Mac Splunk Enterprise
+Ubuntu endpoint → Splunk Universal Forwarder → Mac Splunk  
 
 Purpose:
 - Forward configured Linux telemetry.
